@@ -9,7 +9,7 @@ import "./layout.css"
 
 export default function Layout({ children }) {
     return (
-        <main className="grid-container h-screen overflow-hidden">
+        <main className="grid-container h-screen overflow-hidden font-opensans">
             <Sidebar />
             <Main>
                 {children}
