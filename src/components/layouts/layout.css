@@ -20,7 +20,7 @@
 .navbar-container{
     grid-area: nav;
     display: grid;
-    grid-template-rows: 90% 10%;
+    grid-template-rows: 80% 20%;
 }
 
 @media(max-width:1024px){
@@ -34,7 +34,12 @@
             "nav";
     }
     .sidebar-container {
-        display:grid;
+        min-height: auto;
         grid-template-rows: none;
+    }
+
+    .navbar-container{
+        display: flex;
+        justify-content: space-between;
     }
 }

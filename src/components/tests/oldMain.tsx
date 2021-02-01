@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Main() {
+export default function oldMain() {
     return (
-        <div id="divMain" className="col-span-9 mr-14 p-10 space-y-10">
+        <div id="divMain" className="overflow-y-auto col-span-9 mr-14 p-10 space-y-10">
             <div id="post-1" className="flex space-x-10">
                 <div className="relative w-20 h-20 rounded-full overflow-hidden">
                     <img className="absolute " src="https://www.svgrepo.com/show/170303/avatar.svg"

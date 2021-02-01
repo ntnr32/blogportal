@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function NavBar() {
     return (
-        <nav className="navbar-container py-5">
+        <nav className="navbar-container border-t lg:border-l lg:border-t-0 border-gray-200 mx-5 lg:mx-0 lg:my-5 items-center lg:items-start">
             <div className="top-menu-items text-center">
-                <ul>
+                <ul className="flex lg:block">
                     <li>
                         <button type="button" title="Click here to go to Home">
                             <svg className="w-10 p-2 text-gray-500" xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export default function NavBar() {
                 </ul>
             </div>
             <div className="bottom-menu-items text-center">
-                <ul>
+                <ul className="flex lg:block">
                     <li>
                         <button type="button" title="Click here to open in fullscreen">
                             <svg className="w-10 p-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
