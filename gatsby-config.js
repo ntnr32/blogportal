@@ -18,12 +18,33 @@ module.exports = {
         path: `${__dirname}/src/static/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/static/posts`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            }
+          }
+        ]
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `blog-porta;`,
+        name: `blog-portal`,
         short_name: `blogportal`,
         start_url: `/`,
         background_color: `#663399`,

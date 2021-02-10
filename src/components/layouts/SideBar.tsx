@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import Image from '../Image';
 
 export default function Sidebar() {
+
     return (
         <section className="sidebar-container text-center shadow-lg text-gray-400 font-indieFlower">
             <div className="sb-profile flex m-auto mx-5 items-center lg:block lg:p-10">
                 <div className="sb-profile-photo lg:mx-auto w-10 h-10 rounded-full overflow-hidden">
-                    <Link to="/"><img src="" alt="Profile" /></Link>
+                    <Link to="/"><Image /></Link>
                 </div>
                 <div className="sb-profile-info text-left px-5 lg:text-center lg:p-5">
                     <h2 className="lg:text-2xl font-semibold">Nitin Res</h2>
