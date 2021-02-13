@@ -4,13 +4,17 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layouts/Layout';
 import SEO from '../components/seo';
 
+
 const singlePost = ({ data }) => {
     const { title, date, slug, excerpt, featureImage } = data.mdx.frontmatter;
-    const image = featureImage.childImageSharp.fixed;
+    // const imageSharp = featureImage;
+    // const image = imageSharp ? imageSharp.childImageSharp.fixed : null;
     return (
         <Layout>
             <SEO title={title} description={excerpt} />
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            <div className="markdown">
+                <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            </div>
         </Layout>
     )
 }

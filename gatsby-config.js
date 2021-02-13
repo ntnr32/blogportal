@@ -53,6 +53,17 @@ module.exports = {
         icon: `src/static/images/logo.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-remark-classes`,
+      options: {
+        classMap: {
+          "heading[depth=1]": "title",
+          "heading[depth=2]": "subtitle",
+          paragraph: "para",
+        }
+      }
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

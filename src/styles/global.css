@@ -10,3 +10,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.nav-link {
+  @apply text-gray-500 transition rounded-full hover:shadow-lg hover:text-gray-800 focus:outline-none;
+}

@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 
-import Sidebar from './Sidebar'
-import Main from './Main'
-import NavBar from './NavBar'
+import Sidebar from '../sidebar/Sidebar'
+import Main from '../container/Main'
+import NavBar from '../navbar/NavBar'
 
 import "./layout.css"
 
 export default function Layout({ children }) {
+
+    // TODO: Move logic out of components
+    const mainContainerRef = useRef(null);
+
+    const scrollToUpHandler = () => {
+        console.log('mainContainerScrollToUp clicked');
+        mainContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     return (
         <main className="grid-container h-screen overflow-hidden font-opensans">
             <Sidebar />
-            <Main>
+            <Main containerRef={mainContainerRef}>
                 {children}
             </Main>
-            <NavBar />
+            <NavBar scrollHandler={scrollToUpHandler} />
         </main>
     )
 }
