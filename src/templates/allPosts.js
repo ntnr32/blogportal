@@ -1,18 +1,22 @@
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layouts/Layout"
 import SEO from "../components/seo"
 import Post from "../components/Post"
 
 const allPost = ({ pageContext, data }) => {
-    // const { currentPage, numPages } = pageContext;
-    // const isFirst = currentPage === 1;
-    // const isLast = currentPage === numPages;
-    // const prevPage = currentPage - 1 === 1 ? `/` : `/${currentPage - 1}`;
-    // const nextPage = `${currentPage + 1}`;
+    const { currentPage, numPages } = pageContext;
+    const isFirst = currentPage === 1;
+    const isLast = currentPage === numPages;
+    const prevPage = currentPage - 1 === 1 ? `/` : `/${currentPage - 1}`;
+    const nextPage = `${currentPage + 1}`;
 
     const posts = data.allMdx.edges;
+
+    const disableLinks = (flag) => {
+        return flag ? "pointer-events-none" : ""
+    }
 
     return (
         <Layout>
@@ -24,7 +28,11 @@ const allPost = ({ pageContext, data }) => {
                     excerpt={post.node.frontmatter.excerpt}
                     slug={post.node.frontmatter.slug}
                 />)}
-        </Layout>
+            <ul>
+                <li><Link to={prevPage} disabled={true} className={`${disableLinks(isFirst)}`}>Previous Page</Link></li>
+                <li><Link to={nextPage} className={`${disableLinks(isLast)}`}>Next Page</Link></li>
+            </ul>
+        </Layout >
     )
 }
 
