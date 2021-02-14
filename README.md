@@ -8,6 +8,8 @@
   Peronal Blog Portal 
 </h1>
 
+![github pages build](https://github.com/ntnr32/blogportal/workflows/github%20pages/badge.svg)
+
 ## 🚀 Quick start
 
 1.  **Start developing.**
