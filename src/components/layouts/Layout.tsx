@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-import Sidebar from '../sidebar/Sidebar'
-import Main from '../container/Main'
-import NavBar from '../navbar/NavBar'
+import Sidebar from './../sidebar/SideBar';
+import Main from '../container/Main';
+import NavBar from '../navbar/NavBar';
 
 import "./layout.css"
 
