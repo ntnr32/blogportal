@@ -38,9 +38,9 @@
   @apply list-decimal mb-8;
 }
 
-.markdown > table,
+/* .markdown > table,
 th,
 tr,
 td {
   @apply table-auto border border-gray-500;
-}
+} */

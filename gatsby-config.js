@@ -3,6 +3,8 @@ module.exports = {
   siteMetadata: {
     title: `Blog`,
     description: `Blog Portal for learning and sharing.`,
+    url: "",
+    image: "",
     author: `@ntnr32`,
   },
   plugins: [

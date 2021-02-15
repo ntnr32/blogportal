@@ -28,8 +28,17 @@ jobs:
       - run: npm run format
       - run: npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Pushes to gh-pages-repo repository
+        uses: cpina/github-action-push-to-another-repository@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          source-directory: "./public"
+          destination-github-username: "ntnr32"
+          destination-repository-name: "personal-blog"
+          user-email: ntnr32@gmail.com
+          commit-message: See ORIGIN_COMMIT
+          target-branch: gh_pages
+
+      - name: Test get variable exported by push-to-another-repository
+        run: echo $DESTINATION_CLONED_DIRECTORY
