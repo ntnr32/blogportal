@@ -8,7 +8,11 @@
   Peronal Blog Portal 
 </h1>
 
+---
+
 ![github pages build](https://github.com/ntnr32/blogportal/workflows/github%20pages/badge.svg)
+
+---
 
 ## 🚀 Quick start
 
@@ -29,9 +33,12 @@
 
 ## 🎁 Technical Stack
 
-1. Gatsby
-2. React JS
-3. GraphQl
+1. Gatsby - Generate Static Site
+2. React JS - Gatsby is based on React JS
+3. GraphQL - Query Language
+4. TailwindCSS - CSS Utility
+5. Hasky JS - Git Hooks for dev environment.
+6. Github Actions - Test and Deploy
 
 ## 🛠 Gatsby Plugins
 
@@ -77,3 +84,46 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 7.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
 8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+## 👩‍💻 Development Steps
+
+1. Clone the repository.
+
+   `git clone https://github.com/ntnr32/blogportal.git`
+
+2. Install NPM dependencies
+
+   `npm install`
+
+3. Create a new branch for development (ex. feature/f1 or fix/issue01 etc.)
+
+   `git checkout -b <<branch-name>>`
+
+4. Make changes in code and commit & push it to remote.
+
+   - `git add --a .`
+
+     > _Note: command will stage all the files (i.e., tracked and untracked)_
+
+   - `git commit -m <<commit message>>`
+
+     > _Note: use conventional commit strategy_
+
+   - `git push origin`
+
+5. Raise a Pull Request from github protal
+
+6. Review and Approve the PR and delete the branch.
+
+7. Clean local branches
+
+   - `git branch -a`
+
+     > List all local branches
+
+   - `git branch -d <<branch-name>>`
+
+     > Delete local development branch
+
+   - `git remote prune origin`
+     > Clean remote branches
