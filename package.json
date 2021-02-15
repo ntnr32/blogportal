@@ -12,6 +12,7 @@
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-mdx": "^1.9.0",
+    "gatsby-plugin-no-sourcemaps": "^3.0.0-next.0",
     "gatsby-plugin-offline": "^3.4.0",
     "gatsby-plugin-postcss": "^3.6.0",
     "gatsby-plugin-purgecss": "^5.0.0",
@@ -36,6 +37,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "husky": "^4.3.8",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -51,6 +53,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "hooks": {
+    "pre-commit": "./.hasky/pre-commit",
+    "pre-push": "./.hasky/pre-push $HUSKY_GIT_STDIN"
   },
   "repository": {
     "type": "git",
