@@ -28,6 +28,13 @@ module.exports = {
         path: `${__dirname}/src/static/posts`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/static/svgs`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -66,8 +73,15 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-no-sourcemaps`
-
+    `gatsby-plugin-no-sourcemaps`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svgs/
+        }
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
