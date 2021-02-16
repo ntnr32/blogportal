@@ -115,7 +115,11 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 6. Review and Approve the PR and delete the branch.
 
-7. Clean local branches
+7. Checkout to `main` branch.
+
+    `git checkout main`
+
+8. Clean local branches
 
    - `git branch -a`
 
