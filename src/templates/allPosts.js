@@ -3,7 +3,9 @@ import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layouts/Layout"
 import SEO from "../components/seo"
-import Post from "../components/Post"
+import Pagination from '../components/Pagination';
+import FlexContainer from '../components/container/FlexContainer';
+import PostContainer from '../components/container/PostContainer';
 
 const allPost = ({ pageContext, data }) => {
     const { currentPage, numPages } = pageContext;
@@ -14,24 +16,13 @@ const allPost = ({ pageContext, data }) => {
 
     const posts = data.allMdx.edges;
 
-    const disableLinks = (flag) => {
-        return flag ? "pointer-events-none" : ""
-    }
-
     return (
         <Layout>
             <SEO title="Home" />
-            {posts.map(post =>
-                <Post key={post.node.frontmatter.slug}
-                    title={post.node.frontmatter.title}
-                    date={post.node.frontmatter.date}
-                    excerpt={post.node.frontmatter.excerpt}
-                    slug={post.node.frontmatter.slug}
-                />)}
-            <ul>
-                <li><Link to={prevPage} disabled={true} className={`${disableLinks(isFirst)}`}>Previous Page</Link></li>
-                <li><Link to={nextPage} className={`${disableLinks(isLast)}`}>Next Page</Link></li>
-            </ul>
+            <FlexContainer direction="flex-col">
+                <PostContainer posts={posts} />
+                <Pagination isFirst={isFirst} isLast={isLast} nextPage={nextPage} prevPage={prevPage} />
+            </FlexContainer>
         </Layout >
     )
 }
