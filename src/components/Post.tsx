@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
+import Link from 'gatsby-plugin-transition-link'
+
 
 export default function Post({ title, date, excerpt, slug }) {
     return (

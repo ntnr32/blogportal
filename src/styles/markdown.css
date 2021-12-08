@@ -1,3 +1,8 @@
+@media only screen and (max-width: 400px) {
+  .markdown {
+    padding: 2.5rem;
+  }
+}
 .markdown > h2 {
   @apply text-3xl font-black mt-16 mb-8;
 }
@@ -38,9 +43,13 @@
   @apply list-decimal mb-8;
 }
 
-/* .markdown > table,
+.markdown :not(pre) > code.language-text {
+  white-space: pre-line;
+}
+
+.markdown > table,
 th,
 tr,
 td {
   @apply table-auto border border-gray-500;
-} */
+}
